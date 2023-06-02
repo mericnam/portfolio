@@ -1,2 +1,3 @@
 # portfolio.github.io
- portfolio site
+ basic one page portfolio site
+ html css js
