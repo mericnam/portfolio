@@ -278,7 +278,7 @@ nav ul li a:active {
   width: 80vw;
   height: 70vh;
   border-radius: 10px;
-  background-image: url(./images/project1.jpg);
+  background: url(./images/project1.jpg);
   background-position: center;
   background-size: cover;
   box-shadow: rgba(0, 0, 0, 0.7) 0px 0px 75px 10px;
@@ -414,9 +414,11 @@ nav ul li a:active {
   .interests {
     display: none;
   }
+  .social .fa-brands {
+    margin: .7rem;
+  }
   .social{
-    flex-direction: column;
-    gap: 7px;
+    flex-direction: row;
   }
 }
 
@@ -451,8 +453,8 @@ nav ul li a:active {
     height: 1.5rem;
   }
   .social .fa-brands {
-    margin-left: 3rem;
-    margin-right: 3rem;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
   }
   .book-container{
     margin-left: 12rem;
@@ -475,8 +477,7 @@ nav ul li a:active {
     padding-top: 1rem;
   }
   .social{
-    flex-direction: column;
-    gap: 10px;
+    flex-direction: row;
   }
 }
 
@@ -518,8 +519,8 @@ nav ul li a:active {
     height: 1.5rem;
   }
   .social .fa-brands {
-    margin-left: 3rem;
-    margin-right: 3rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
   }
   .book {
     height: 20rem;
