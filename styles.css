@@ -29,6 +29,8 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 67px;
+  transition: all 1s;
+
   /* our navbar's height is 67px. we add that 67 px padding top to fit the page in links   */
 }
 /* scrollbar end  */
@@ -215,8 +217,49 @@ nav ul li a:active {
   flex-direction: column;
   align-items: center;
   background-color: var(--color6);
+  justify-content: space-around;
+  transition: all 2s;
 }
-.book-container {
+.interests div{
+  width: 50px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: var(--color1);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: .5s;
+  border: .1px solid black;
+  box-shadow: 0px 0px 63px 18px rgba(0,0,0,0.75);
+}
+#interestOne:hover{
+  width: 250px;
+  background-image: url(./images/web-dev.jpg);
+  box-shadow: 0px -50px 67px -12px rgba(0,0,0,0.75);
+}
+#interestTwo:hover{
+  width: 250px;
+  background-image: url(./images/unity-vs-unreal.webp);
+  box-shadow: 0px 50px 67px -12px rgba(0,0,0,0.75);
+}
+.interestSelected{
+  width: 700px!important;
+  min-height: 300px;
+  background-color: #000000;
+  box-shadow: 0px 0px 63px 18px rgba(0,0,0,0.75);
+  display: none;
+}
+.visible{
+  display: flex;
+}
+.interestSelected::before{
+
+}
+.interestSelected::after{
+}
+
+
+/* .book-container {
   margin: 2rem 3rem 2rem 30rem;
   display: flex;
   flex-direction: column;
@@ -229,13 +272,13 @@ nav ul li a:active {
   box-shadow: rgba(0, 0, 0, 0.7) 0px 0px 75px 10px;
   position: relative;
   margin-top: 3.4rem ;
-}
-.page {
+} */
+/* .page {
   width: 100%;
   height: 27rem;
   perspective: 800px;
-}
-.book-1 .page-1 {
+} */
+/* .book-1 .page-1 {
   background: url(./images/card-gamedevoloping.png);
   background-size: cover;
   background-position: center;
@@ -282,8 +325,8 @@ nav ul li a:active {
   transition: all 1s 0.3s;
   transform-origin: 0 50%;
   z-index: 2;
-}
-.book-2 .page-1::after {
+} */
+/* .book-2 .page-1::after {
   content: "Pixel Art";
   color: var(--color4);
   background: var(--color1);
@@ -354,7 +397,7 @@ nav ul li a:active {
 }
 .book .page .page-1::after{
  padding-top: 150px;
-}
+} */
 /* interests end */
 
 /* projects  */
@@ -379,6 +422,7 @@ nav ul li a:active {
   background-size: cover;
   box-shadow: rgba(0, 0, 0, 0.7) 0px 0px 75px 10px;
   transition: all 1.3s;
+  cursor: pointer;
 }
 .carousel-bot{
   margin: auto;
