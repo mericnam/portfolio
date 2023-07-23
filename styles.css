@@ -211,52 +211,81 @@ nav ul li a:active {
 
 /* interest   */
 .interests {
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: var(--color6);
-  justify-content: space-around;
-  transition: all 2s;
+  padding: 70px;
+ width: 100%;
+ min-height: 100vh;
+ background-color: var(--color7);
+justify-content: space-around;
+text-align: center;
+ align-items: center;
+ display: grid;
 }
-.interests div{
-  width: 50px;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background-color: var(--color1);
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-  transition: .5s;
-  border: .1px solid black;
-  box-shadow: 0px 0px 63px 18px rgba(0,0,0,0.75);
+.interests div p{
+  color: var(--color5);
 }
-#interestOne:hover{
-  width: 250px;
-  background-image: url(./images/web-dev.jpg);
-  box-shadow: 0px -50px 67px -12px rgba(0,0,0,0.75);
-}
-#interestTwo:hover{
-  width: 250px;
-  background-image: url(./images/unity-vs-unreal.webp);
-  box-shadow: 0px 50px 67px -12px rgba(0,0,0,0.75);
-}
-.interestSelected{
-  width: 700px!important;
-  min-height: 300px;
+.interestOne{
+  grid-area: interestOne ;
   background-color: #000000;
-  box-shadow: 0px 0px 63px 18px rgba(0,0,0,0.75);
-  display: none;
+  margin: auto;
+
+  width: 220px;
+  height: 100px;
+  line-height: 80px;
+  outline: 10px solid var(--color4);
+  outline-offset: 5px;
+  box-shadow: 0px 0px 30px 5px black;
+  transition: 500ms; 
 }
-.visible{
-  display: flex;
+.interestOne:hover, .interestOne:focus{
+  outline-offset: -15px;
+  border-radius: 20px;
 }
-.interestSelected::before{
-  font-size: 16px;
+.interestTwo{
+  grid-area: interestTwo ;
+  background-color: #000000;
+  margin: auto;
+
+  width: 220px;
+  height: 100px;
+  line-height: 80px;
+  outline: 10px solid var(--color4);
+  outline-offset: 5px;
+  box-shadow: 0px 0px 30px 5px black;
+  transition: 500ms;
 }
-.interestSelected::after{
-  font-size: 16px;
+.interestTwo:hover, .interestOne:focus{
+  outline-offset: -15px;
+  border-radius: 20px;
+}
+.interestDetail{
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  grid-area: interestDetail ;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: auto;
+  width: 800px;
+  height: 450px;
+  opacity: 0;
+  transition: 500ms;
+
+  /* animation: border 2s;
+  animation-iteration-count:1; */
+}
+/* @keyframes shake {
+  0% { transform: translateY(0px) rotate(180deg); }
+  50% { transform: translateY(40px) rotate(180deg); }
+  100% { transform: translateY(0px) rotate(180deg); }
+} */
+.interestDetailInfo{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0,0.6);
+  padding-top: 70px;
+  line-height: 50px;
+}
+.interest-detail.active {
+  background-color: rgba(0, 0, 0, 0.8);
 }
 /* interests end */
 
@@ -290,7 +319,9 @@ nav ul li a:active {
 }
 .carousel-bot{
   grid-area: carouselBot;
-  background-color: var(--color6);
+  background-color: #c88752;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 75px 10px;
+
   display: flex;
   justify-content: space-around;
   transition: all 1.3s;
@@ -417,15 +448,17 @@ nav ul li a:active {
   .bosluk-1 {
     height: 1.5rem;
   }
-  .interests {
-    display: none;
-  }
-  .social .fa-brands {
+   .social .fa-brands {
     margin: .7rem;
   }
   .social{
     flex-direction: row;
   }
+  .interests{
+    grid-template-areas:
+    "interestOne interestTwo"    
+    "interestDetail interestDetail" ;   
+}
 }
 
 /* Small screen devices (600px and above) */
@@ -462,29 +495,14 @@ nav ul li a:active {
     margin-left: 1.5rem;
     margin-right: 1.5rem;
   }
-  .book-container{
-    margin-left: 12rem;
-  }
-  .book {
-    height: 14rem;
-    width: 14rem;
-    font-size: .7rem;
-    margin-left: 7rem;
-  }
-  .page {
-    width: 14rem;
-    height: 14rem;
-  }
-  .page-2{
-    font-size: 0.7rem;
-  }
-  .book .page-1::after{
-    font-size: 1rem;
-    padding-top: 1rem;
-  }
   .social{
     flex-direction: row;
   }
+  .interests{
+    grid-template-areas:
+    "interestOne interestTwo"   
+    "interestDetail interestDetail" ;   
+}
 }
 
 /* Medium screen devices (768px and above) */
@@ -528,26 +546,15 @@ nav ul li a:active {
     margin-left: 2rem;
     margin-right: 2rem;
   }
-  .book {
-    height: 20rem;
-    width: 20rem;
-    font-size: 1rem;
-    margin-left: 10rem;
-  }
-  .page-2{
-    font-size: 0.9rem;
-  }
-  .page {
-    width: 20rem;
-    height: 20rem;
-  }
-  .book .page-1::after{
-    font-size: 1.5rem;
-    padding-top: 1rem;
-  }
   .social{
     flex-direction: row;
   }
+  .interests{
+    grid-template-areas:
+    "interestOne interestTwo"    
+    "interestDetail interestDetail" ;  
+
+}
 }
 
 /* Big screen devices (889px and above) */
@@ -591,24 +598,14 @@ nav ul li a:active {
     margin-left: 3rem;
     margin-right: 3rem;
   }
-  .book {
-    height: 27rem;
-    width: 27rem;
-    margin-left: 13rem;
-  }
-  .page-2{
-    font-size: 1.2rem;
-  }
-  .page {
-    width: 100%;
-    height: 27rem;
-  }
-  .book .page-1::after{
-    font-size: 1.5rem;
-  }
   .social{
     flex-direction: row;
   }
+  .interests{
+    grid-template-areas:
+    "interestOne interestTwo"    
+    "interestDetail interestDetail" ;   
+}
 }
 
 /* Extra big screen devices (1200px and above) */
@@ -659,22 +656,13 @@ nav ul li a:active {
     margin-left: 3rem;
     margin-right: 3rem;
   }
-  .book {
-    height: 27rem;
-    width: 27rem;
-   margin-left: 15rem;
-  }
-  .page-2{
-    font-size: 1.4rem;
-  }
-  .page {
-    width: 100%;
-    height: 27rem;
-  }
-  .book .page-1::after{
-    font-size: 2rem;
-  }
   .social{
     flex-direction: row;
+  }
+  .interests{
+      grid-template-areas:
+      "interestOne interestDetail interestTwo" ; 
+      grid-template-columns: 1fr 4fr 1fr; 
+
   }
 }

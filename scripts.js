@@ -1,22 +1,39 @@
 
 const carouselTop = document.getElementById("carouselTop")
-const interestSelected = document.getElementById("interestSelected")
+const interestDetail = document.getElementById("interestDetail")
+const interestDetailInfo = document.getElementById("interestDetailInfo")
 
 carouselTop.addEventListener("click",activeCheck)
 
+let selectedInterest = "blank"
+
 function interestOneClicked(){
-    interestSelected.classList.toggle("visible")
-    interestSelected.style.backgroundImage = "url('./images/coding-man.jpg')";
-    interestSelected.style.setProperty("--before-content", "'Web development'");
-    interestSelected.style.setProperty("--after-content", "'web web web web web web'");
+    if(selectedInterest=="blank" || selectedInterest =="two"){        
+        interestDetail.style.backgroundImage="url(./images/gameDev.png)";
+        interestDetailInfo.innerText="Passionate about game design, I am deeply interested in creating immersive experiences that captivate players. My experience with Unity, along with my exploration of Godot and Unreal Engine, fuels my ambition to craft unique and engaging games. Currently, I am honing my skills in JavaScript to design captivating and innovative games."
+        selectedInterest ="one"
+        interestDetail.style.opacity =1;
+    }else{
+        interestDetail.style.backgroundImage="";
+        interestDetailInfo.innerText=""
+        selectedInterest ="blank"
+        interestDetail.style.opacity =0;
 
-
+    }
 }
 function interestTwoClicked(){
-    interestSelected.classList.toggle("visible")
-    interestSelected.style.backgroundImage = "url('./images/celeste-game.avif')";
-    interestSelected.style.setProperty("--before-content", "'Game development'");
-    interestSelected.style.setProperty("--after-content", "'game game game game '");
+    if(selectedInterest=="blank" || selectedInterest =="one"){
+        interestDetail.style.backgroundImage="url(./images/webDev.png)";
+        interestDetailInfo.innerText="For over a year, I have been dedicatedly immersing myself in the world of web design. Mastering HTML, CSS, JS, and Bootstrap was just the beginning as I ventured into React. With each new project, I am driven to push the boundaries of web development, fueled by a relentless passion for creating captivating digital experiences."
+        selectedInterest ="Two"
+        interestDetail.style.opacity =1;
+    }else{
+        interestDetail.style.backgroundImage="";
+        interestDetailInfo.innerText=""
+        selectedInterest ="blank"
+        interestDetail.style.opacity =0;
+
+    }     
 }
 
 function activeCheck(){
@@ -76,10 +93,6 @@ function arrowThreeSelected(){
     document.getElementById("arrowTwo").classList.remove("active-arrow");
     document.getElementById("arrowThree").classList.add("active-arrow");
 }
-
-
-
-
 
 
 
